@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Searching | JavaScript</title>
+    <style>
+      h2 {
+        color: brown;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      table,
+      th,
+      tr,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+        border-spacing: 10px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      th {
+        background-color: rgb(204, 204, 204);
+        font-style: italic;
+      }
+      td:hover {
+        background-color: rgb(182, 182, 182);
+      }
+      #tables {
+        width: 90%;
+        margin: 50px auto;
+        text-align: center;
+      }
+      #myInput {
+        width: 90%;
+        position: relative;
+        left: 60px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>My Friends</h2>
+    <input
+      type="text"
+      name=""
+      id="myInput"
+      placeholder="Search Names..."
+      onkeyup="searchName()"
+    />
+    <table id="tables">
+      <tr>
+        <th>Name</th>
+        <th>Coarse</th>
+      </tr>
+      <tr>
+        <td>Anish</td>
+        <td>ITI</td>
+      </tr>
+      <tr>
+        <td>Aditya</td>
+        <td>ITI</td>
+      </tr>
+      <tr>
+        <td>Abhishek</td>
+        <td>BCA</td>
+      </tr>
+      <tr>
+        <td>Chandan</td>
+        <td>B.Tech</td>
+      </tr>
+    </table>
+
+    <script>
+      const searchName = () => {
+        let filter = document.getElementById("myInput").value.toUpperCase();
+        let table = document.getElementById("table");
+        let tr = document.getElementsByTagName("tr");
+
+        for (let i = 0; i < tr.length; i++) {
+          let td = tr[i].getElementsByTagName("td")[0];
+          if (td) {
+            let textValue = td.textContent || td.innerHTML;
+
+            if (textValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "None";
+            }
+          }
+        }
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background Change</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      button {
+        width: 150px;
+        height: 50px;
+        margin: 40vh 90vh;
+        cursor: pointer;
+        color: white;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <button>Click Me !!</button>
+
+    <script>
+      const btn = document.querySelector("button");
+      const body = document.querySelector("body");
+      const color = ["red","green","brown","yellow","pink","blue","purple"];
+
+      body.style.backgroundColor = "aqua";
+
+      btn.addEventListener("click", chagneBG);
+      function chagneBG() {
+        const colorIndex = parseInt(Math.random() * color.length);
+        body.style.backgroundColor = color[colorIndex];
+      }
+    </script>
+  </body>
+</html>

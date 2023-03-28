@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown | Timer</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+        box-sizing: border-box;
+
+        background-repeat: no-repeat;
+      }
+      .hero {
+        background-image: url(/Technologies/Items/background.png);
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+      }
+      .logo {
+        padding: 2rem 5rem;
+      }
+      .logo img{
+        width: 100px;
+        filter: invert(100%);
+      }
+
+      .container {
+        color: white;
+        font-weight: 600;
+        padding-top: 2rem;
+        padding-left: 5rem;
+      }
+      .container h1 {
+        font-size: xxx-large;
+      }
+
+      h1 span {
+        color: #ff3753;
+      }
+
+      .btn button {
+        background: transparent;
+        outline: none;
+        border: 1px solid #fff;
+        color: #fff;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .btn img {
+        width: 13px;
+        margin-left: 10px;
+      }
+
+      .launch-time {
+        display: flex;
+        position: relative;
+        top: -45px;
+        font-weight: normal;
+      }
+
+      .launch-time div{
+        flex-basis: 150px;
+      }
+      .launch-time p {
+        font-size: 60px;
+        margin-bottom: 10px;
+      }
+      .rocket-col {
+        width: 250px;
+        position: absolute;
+      }
+      .rocket {
+        width: 250px;
+        position: absolute;
+        right: 20%;
+        bottom: 0;
+        animation: rocket 3s linear infinite;
+      }
+      @keyframes rocket {
+        0% {
+          bottom: 0;
+          opacity: 0;
+        }
+
+        100% {
+          bottom: 100%;
+          opacity: 1;
+        }
+      }
+      @media (min-width: 0px) and (max-width: 599px){
+        .hero {
+            background-image: url(/Technologies/Items/bg-phone.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .logo {
+        padding: 10px 15px;
+      }
+      .container{
+        position: relative;
+        top: 10%;
+        padding: 45px 15px;
+      }
+      .launch-time div{
+        flex-basis: 250px;
+      }
+      .rocket {
+        width: 250px;
+        position: absolute;
+        right: 30%;
+        bottom: -25%;
+        animation: rocket 3s linear infinite;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <div class="logo">
+        <img src="/Technologies/Items/Abhinav.png" alt="">
+      </div>
+      <div class="container">
+        <p>❤ Wishing You a Very Very Happy Birthday <br> My Dear Simmi ❣ 🎉</p>
+        <h1><span>Simran</span> Kaur</h1>
+        <div class="launch-time">
+
+          <div class="col">
+            <p id="months">00</p>
+            <span>Months</span>
+          </div>
+
+          <div class="col">
+            <p id="days">00</p>
+            <span>Days</span>
+          </div>
+
+          <div class="col">
+            <p id="hours">00</p>
+            <span>Hours</span>
+          </div>
+
+          <div class="col">
+            <p id="minutes">00</p>
+            <span>Minutes</span>
+          </div>
+
+          <div class="col">
+            <p id="seconds">00</p>
+            <span>Seconds</span>
+          </div>
+
+        </div>
+        <div class="btn">
+          <button type="button">
+            Learn More <img src="/Technologies/Items/triangle.png" alt="" />
+          </button>
+        </div>
+        <img src="/Technologies/Items/rocket.png" class="rocket" />
+      </div>
+    </div>
+
+    <script>
+      var contDownDate = new Date("9 20, 2023 00:00:00").getTime();
+      var x = setInterval(function () {
+        var now = new Date().getTime();
+        var distance = contDownDate - now;
+
+        var months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30));
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("months").innerHTML = months;
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("months").innerHTML = "00";
+          document.getElementById("days").innerHTML = "00";
+          document.getElementById("hours").innerHTML = "00";
+          document.getElementById("minutes").innerHTML = "00";
+          document.getElementById("seconds").innerHTML = "00";
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>

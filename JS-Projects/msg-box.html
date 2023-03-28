@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Message Dialoge Box</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body,html{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: #000150;
+        height: 100%;
+      }
+      .container {
+        width: 600px;
+        padding: 15px;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: 25%;
+        left: 30%;
+        border-radius: 10px;
+      }
+      h4 {
+        font-size: 1.5rem;
+        line-height: 1.5;
+        margin-bottom: 0.5rem;
+        text-transform: capitalize;
+      }
+      form input.msg_box {
+        width: 550px;
+        font-size: 1.4rem;
+        color: rgb(145, 145, 145);
+        height: 40px;
+        margin-bottom: 14px;
+      }
+      .btn {
+        width: 150px;
+        background-color: #6665ee;
+        color: white;
+        margin-inline-start: 13rem;
+        font-size: 1.2rem;
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+      }
+      h5 {
+        font-size: 1rem;
+        margin: 15px 0;
+        font-family: Arial, Helvetica, sans-serif;
+        color: red;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        background-color: rgba(255, 0, 0, 0.39);
+      }
+      .feedback {
+        display: none;
+      }
+      .show {
+        display: block;
+      }
+      .msg_content {
+        color: #4b830a;
+        font-size: 1.3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h4>A Message you would like to Pass</h4>
+
+      <form action="" id="msg-form">
+        <input type="text" id="msg" class="msg_box" />
+        <input type="submit" id="submit" class="btn" />
+      </form>
+      <h5 class="feedback">Please Enter the valid Pass</h5>
+      <h4>Last Message Deliverd</h4>
+      <h4 class="msg_content">Namaste India</h4>
+    </div>
+
+    <script>
+      const form = document.querySelector("#msg-form");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const message = document.getElementById("msg");
+        const feedback = document.querySelector(".feedback");
+        const messageContent = document.querySelector(".msg_content");
+
+        // console.log(message, feedback, messageContent);
+
+        if (message.value === "") {
+          feedback.classList.add("show");
+          setTimeout(function () {
+            feedback.classList.remove("show");
+          }, 5000);
+        } else {
+          messageContent.textContent = message.value;
+          message.value = "";
+        }
+      });
+    </script>
+  </body>
+</html>

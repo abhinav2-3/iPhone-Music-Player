@@ -1,0 +1,122 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select Social Media</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-image: linear-gradient(#f44336, #730228);
+        font-family: sans-serif;
+        width: 100%;
+        height: auto;
+        background-repeat: no-repeat;
+      }
+      .selector {
+        width: 350px;
+        margin: auto;
+        position: relative;
+        top: 20%;
+      }
+      #selectfield {
+        width: 100%;
+        padding: 10px 15px;
+        box-sizing: border-box;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 6px;
+        display: flex;
+        text-align: center;
+        justify-content: space-between;
+      }
+      #selectfield img {
+        position: relative;
+        top: 15px;
+        width: 20px;
+        height: 20px;
+      }
+      #selectfield:hover{
+        cursor: pointer;
+      }
+      #list {
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.7);
+        overflow: hidden;
+        padding-left: 0;
+      }
+      .options {
+        list-style: none;
+        padding: 15px;
+        cursor: pointer;
+        position: relative;
+      }
+      .options img {
+        width: 30px;
+        position: absolute;
+        top: 25px;
+        left: 30px;
+      }
+      .options p {
+        position: relative;
+        left: 60px;
+      }
+      .options:hover {
+        background: rgba(255, 255, 255, 0.7);
+      }
+      .hide {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="selector">
+      <div id="selectfield">
+        <p id="selecttext">Select Social Media</p>
+        <img src="/Technologies/Items/add.png" id="arrowIcon" alt="" />
+      </div>
+
+      <ul id="list" class="hide">
+        <li class="options">
+          <img src="/Technologies/Items/instagram.png" alt="" />
+          <p>Instgram</p>
+        </li>
+        <li class="options">
+          <img src="/Technologies/Items/linkedin.png" alt="" />
+          <p>Linkedin</p>
+        </li>
+        <li class="options">
+          <img src="/Technologies/Items/email.png" alt="" />
+          <p>Email</p>
+        </li>
+        <li class="options">
+          <img src="/Technologies/Items/twitter.png" alt="" />
+          <p>Twitter</p>
+        </li>
+        <li class="options">
+          <img src="/Technologies/Items/github-logo.png" alt="" />
+          <p>GitHUb</p>
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      var selectfield = document.getElementById("selectfield");
+      var selecttext = document.getElementById("selecttext");
+      var options = document.getElementsByClassName("options");
+      var list = document.getElementById("list");
+      var arrowIcon = document.getElementById("arrowIcon");
+
+      selectfield.onclick = function () {
+        list.classList.toggle("hide");
+      };
+
+      for (option of options) {
+        option.onclick = function () {
+          selecttext.innerHTML = this.textContent;
+          list.classList.toggle("hide");
+        };
+      }
+    </script>
+  </body>
+</html>
