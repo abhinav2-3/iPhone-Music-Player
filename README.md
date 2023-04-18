@@ -18,19 +18,11 @@ This is a simple music player designed to mimic the interface of an iPhone music
 ## Usage
 
 1. Clone the repository to your local machine.
-2. Open the `index.html` file in a web browser.
+2. Open the `Music.html` file in a web browser.
 3. Use the play, pause, next, and previous buttons to control the music playback.
 4. Use the progress bar to visualize the progress of the playing track.
 5. Tap on the progress bar to seek to a specific time in the track.
 6. Use the reminder functionality to set a reminder for a specific time.
-
-## Screenshots
-
-![iPhone Music Player Screenshot](screenshot.png)
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ## Acknowledgements
 
