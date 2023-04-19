@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 97);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container{
+    max-width: 80vw;
+    width: 100%;
+    max-height: 50vh;
+    height: 50vh;
+    background: blue;
+    border-radius: 12px;
+    margin: auto;
+    position: relative;
+    top: 30vh;
+    padding: 12px;
+    color: #fff;
+}
+.card{
+    width: 100%;
+}
+form{
+    position: absolute;
+    top: 20%;
+    left: 35vw;
+}
+#search{
+    width: 25vw;
+    padding: 12px;
+    outline: none;
+    border-radius: 5px;
+    background: rgb(0, 0, 194);
+    border: none;
+    color: #fff;
+}
+
+img{
+    border-radius: 50%;
+    box-shadow: 0 0 10px 10px rgb(0, 0, 97);
+    width: 120px;
+    position: relative;
+    top: 5vh;
+    left: 3vw;
+}
+.main{
+    display: flex;
+    margin-top: 7px;
+    width: 100%;
+}
+.userData{
+    position: relative;
+    left: 10vw;
+    top: 4vh;
+    color: white;
+    width: 100%;
+}
+ul{
+    display: flex;
+    gap: 15px;
+    margin-block: 15px;
+}
+ul li{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    background: rgb(0, 0, 97);
+    color: white;
+    padding: 3px 5px;
+    border-radius: 4px;
+    text-align: center;
+    margin-inline: 17px;
+}
+.repo-box{
+    width: 90%;
+    height: 100%;
+    position: relative;
+    left: -45px;
+}
+@media screen and (max-width:1024px) {
+    .container{
+        width: 55vw;
+        height: 45vh;
+    }
+    img{
+        border-radius: 50%;
+        width: 100px;
+        top: 7vh;
+    }
+    form{
+        left: 15vw;
+    }
+    #search{
+        width: 30vw;
+    }
+}
+@media screen and (max-width:900px) {
+    .container{
+        width: 60vw;
+        height: 45vh;
+    }
+    img{
+        border-radius: 50%;
+        width: 100px;
+        top: 7vh;
+    }
+    form{
+        left: 15vw;
+    }
+    #search{
+        width: 30vw;
+    }
+}
+@media screen and (max-width:768px) {
+    .container{
+        width: 60vw;
+        height: 45vh;
+    }
+    img{
+        border-radius: 50%;
+        width: 100px;
+        top: 7vh;
+    }
+    .main{
+        width: 80%;
+    }
+    form{
+        left: 15vw;
+    }
+    #search{
+        width: 30vw;
+    }
+}
